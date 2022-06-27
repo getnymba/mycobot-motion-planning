@@ -10,8 +10,8 @@
    * Ubuntu 18.04 / ROS Melodic
    * Ubuntu 20.04 / ROS Noetic
    
-##Build Instructions
-###Unity Side
+## Build Instructions
+### Unity Side
 
 Once Unity is installed, open package manager, and add ROS-TCP-ENDPOINT, URDF-IMPORTER from the git link.
 
