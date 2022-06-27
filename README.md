@@ -17,14 +17,16 @@ Once Unity is installed, open package manager, and add ROS-TCP-ENDPOINT, URDF-IM
 
 To load a package from a Git URL:
 
-    Click the add button in the status bar.
+Click the add button in the status bar.
 
-    The options for adding packages appear.
+The options for adding packages appear.
+
  ![alt text](https://docs.unity3d.com/uploads/Main/upm-ui-giturl.png)
 
-    Select Add package from git URL from the add menu. A text box and an Add button appear.
+Select Add package from git URL from the add menu. A text box and an Add button appear.
 
-    Enter a Git URL in the text box and click Add.
+Enter a Git URL in the text box and click Add.
+
   ```
   https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.ros-tcp-connector
   ```
