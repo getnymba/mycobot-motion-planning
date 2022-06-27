@@ -65,4 +65,4 @@ $ roslaunch mycobot_communication communication_topic.launch
 
 3.2) Change Values of Goal_angle of Subscriber script in firefighter gameobject.
 
-![demo](https://youtu.be/Phar-wUFfHU)
+Demo: https://youtu.be/Phar-wUFfHU
