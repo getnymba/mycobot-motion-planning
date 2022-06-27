@@ -1,101 +1,68 @@
-# mycobot_ros
-
-[![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/chinese.svg)](https://www.elephantrobotics.com/docs/myCobot/3-development/4-ros&moveit/)
-[![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/english.svg)](https://www.elephantrobotics.com/docs/myCobot-en/3-development/4-ros&moveit/)
-
-[中文文档](https://www.elephantrobotics.com/docs/myCobot/3-development/4-ros&moveit/) | [English Document](https://www.elephantrobotics.com/docs/myCobot-en/3-development/4-ros&moveit/)
+# myCobot Motion Planning in Unity 
 
 **Notes**:
 
-<!-- This is the mycobot ROS package designed by Zhang Lijun([lijun.zhang@elephantrobotics.com]()) -->
+<!-- This is the mycobot motion planning package written by Nyambayar D.([getnymba@gmail.com]()) -->
 
-* Make sure that `Atom` is flashed into the top Atom and `Transponder` or `minirobot` is flashed into the base Basic .The tool download address: [https://github.com/elephantrobotics/myCobot/tree/main/Software](https://github.com/elephantrobotics/myCobot/tree/main/Software)
+* Make sure that `Atom` is flashed into the top Atom and `Transponder` is flashed into the base Basic.
 * Supported ROS versions:
    * Ubuntu 16.04 / ROS Kinetic
    * Ubuntu 18.04 / ROS Melodic
    * Ubuntu 20.04 / ROS Noetic
 
-<!-- **If your `Atom` is 2.3 or before, or `pymycobot` is 1.\*, Please check branch [before](https://github.com/elephantrobotics/myCobotRos/tree/before)** -->
+## Build Instructions
+### Unity Side
 
-## Installation
-### Option 1: Docker
-There are two ways to run this project. The first is by running the project in a container, and this requires
-[installing docker](https://docs.docker.com/engine/install/ubuntu/) and
-[installing docker-compose](https://docs.docker.com/compose/install/). The benefit of running in the container is that you can run the project in any version of linux, as long as your kernel
-is new enough.
+1.1) Once Unity is installed, open package manager, and add ROS-TCP-ENDPOINT, URDF-IMPORTER from the git link.
 
-Once docker is installed, run the following command, and the project should show up.
+To load a package from a Git URL:
 
-without NVIDIA GPU:
+Click the add button in the status bar.
+
+The options for adding packages appear.
+
+ ![alt text](https://docs.unity3d.com/uploads/Main/upm-ui-giturl.png)
+
+Select Add package from git URL from the add menu. A text box and an Add button appear.
+
+Enter a Git URL in the text box and click Add.
+
+  ```
+  https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.ros-tcp-connector
+  ```
+
+  ```
+  https://github.com/Unity-Technologies/URDF-Importer.git?path=/com.unity.robotics.urdf-importer
+  ```
+
+1.2) After installing packages, download and import mycobot.unitypackage from Releases as custom assets.
+
+[OPTIONAL] 1.3) In ROS settings menu, change ip address of ROS (if using VM)
+
+## ROS Side
+
+2.1) To build ROS package, run the following command in command line.
 
 ```
-docker-compose build ros && xhost +local:root && docker-compose up ros
-```
-
-with NVIDIA GPU
-
-```
-docker-compose build nvidia-ros && xhost +local:root && docker-compose up nvidia-ros
-```
-
-This command does three things:
-1) `docker-compose build ros`
-
-   This builds the project in a container. That means nothing is installed on your host machine!
-   The first time this runs, this command will take a long while. After running it once, caching
-   will allow this command to run quickly.
-
-2) `xhost +local:root`
-
-   This command gives X the ability to display GUI's from within the docker container
-
-3) `docker-compose up ros`
-
-   This runs the image specified in the `docker-compose.yml`, which by default runs
-   the command `roslaunch mycobot_320 mycobot_320_slider.launch` within the container.
-
-
-### Option 2: Local
-#### 1.1 Pre-Requriements
-
-For using this package, the [Python api](https://github.com/elephantrobotics/pymycobot.git) library should be installed first.
-
-```bash
-pip install pymycobot --user
-```
-
-#### 1.2 Package Download and Install
-
-Install ros package in your src folder of your Catkin workspace.
-
-```bash
-$ cd ~/catkin_ws/src
-$ git clone --depth 1 https://github.com/elephantrobotics/mycobot_ros.git
+$ mkdir ~/catkin_ws
 $ cd ~/catkin_ws
+$ git clone https://github.com/getnymba/mycobot-motion-planning
 $ catkin_make
 $ source ~/catkin_ws/devel/setup.bash
 $ sudo echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
 ```
+Reference: https://github.com/elephantrobotics/mycobot_ros
 
-#### 1.3 Test Python API
+2.2) Run ROSLaunch
 
-```bash
-cd ~/catkin_ws/src/mycobot_ros
-python test.py
+```
+$ roslaunch mycobot_communication communication_topic.launch
 ```
 
-## Screenshot
+## Motion Planning
 
-![Demo](./demo_img/Screenshot-1.png)
+3.1) Start player in Unity.
 
-![Demo](./demo_img/Screenshot-2.png)
+3.2) Change Values of Goal_angle of Subscriber script in firefighter gameobject.
 
-![Demo](./demo_img/Screenshot-3.png)
-
-![Demo](./demo_img/Screenshot-4.png)
-
-![Demo](./demo_img/Screenshot-5.png)
-
-![Demo](./demo_img/320_slider.png)
-
-![Demo](./demo_img/320_moveit.png)
+Demo: https://youtu.be/Phar-wUFfHU
