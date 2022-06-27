@@ -39,7 +39,7 @@ Enter a Git URL in the text box and click Add.
 
 ## ROS Side
 
-2.1) To build ROS package, run this command in command line.
+2.1) To build ROS package, run the following command in command line.
 
 ```
 $ mkdir ~/catkin_ws
