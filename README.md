@@ -63,6 +63,6 @@ $ roslaunch mycobot_communication communication_topic.launch
 
 3.1) Start player in Unity.
 
-3.2) Change Values of Goal_angle of Subscriber script in firefighter gameobject.
+3.2) Change values of Goal_angle in Subscriber script of firefighter gameobject.
 
 Demo: https://youtu.be/Phar-wUFfHU
