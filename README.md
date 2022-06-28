@@ -13,7 +13,7 @@
 ## Build Instructions
 ### Unity Side
 
-1.1) Once Unity is installed, open package manager, and add ROS-TCP-ENDPOINT, URDF-IMPORTER from the git link.
+1.1) Once Unity is installed, open package manager, and add ROS-TCP-CONNECTOR, URDF-IMPORTER from the git link.
 
 To load a package from a Git URL:
 
