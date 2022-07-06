@@ -37,7 +37,9 @@ Enter a Git URL in the text box and click Add.
 
 1.2) After installing packages, download and import mycobot.unitypackage from Releases as custom assets.
 
-[OPTIONAL] 1.3) In ROS settings menu, change ip address of ROS (if using VM)
+1.3) Import urdf model from mycobot ros repository.
+
+[OPTIONAL] 1.4) In ROS settings menu, change ip address of ROS (if using VM)
 
 ## ROS Side
 
