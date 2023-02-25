@@ -34,7 +34,7 @@ public class Subscriber : MonoBehaviour
         joint[2].transform.localRotation = Quaternion.Euler(0,angle[2],0);
         joint[3].transform.localRotation = Quaternion.Euler(0,90+angle[3],0);
         joint[4].transform.localRotation = Quaternion.Euler(-90+angle[4],0,-90);
-        joint[5].transform.localRotation = Quaternion.Euler(angle[5],34,90);
+        joint[5].transform.localRotation = Quaternion.Euler(angle[5],0,90);
     }
 
 }
